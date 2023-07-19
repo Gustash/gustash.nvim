@@ -305,6 +305,9 @@ vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { de
 vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
 
+vim.keymap.set('n', '<leader>vs', vim.cmd.vnew, { desc = '[V]ertical [S]plit' })
+vim.keymap.set('n', '<leader>hs', vim.cmd.new, { desc = '[H]orizontal [S]plit' })
+
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
