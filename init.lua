@@ -208,10 +208,19 @@ require('lazy').setup({
         },
       }
     end,
-    opts = {
-      on_attach = function(bufnr)
-      end,
-    },
+  },
+
+  {
+    'ishchow/nvim-deardiary',
+    config = function()
+      local config = require 'deardiary.config'
+      config.journals = {
+        {
+          path = '~/.journals/personal',
+          frequencies = { 'daily', 'weekly' },
+        },
+      }
+    end,
   },
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
