@@ -233,15 +233,13 @@ require('lazy').setup({
     dependencies = {
       'nvim-lua/plenary.nvim',
     },
-    config = function()
+    opts = function(_, opts)
       local null_ls = require 'null-ls'
-      null_ls.setup {
-        sources = {
-          null_ls.builtins.formatting.stylua,
-          null_ls.builtins.formatting.eslint_d,
-          null_ls.builtins.completion.spell,
-          null_ls.builtins.formatting.prettierd,
-        },
+      opts.sources = {
+        null_ls.builtins.formatting.stylua,
+        null_ls.builtins.formatting.eslint_d,
+        null_ls.builtins.completion.spell,
+        null_ls.builtins.formatting.prettierd,
       }
     end,
   },
@@ -376,6 +374,8 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { de
 vim.keymap.set('n', '<leader>vs', vim.cmd.vnew, { desc = '[V]ertical [S]plit' })
 vim.keymap.set('n', '<leader>hs', vim.cmd.new, { desc = '[H]orizontal [S]plit' })
 
+vim.keymap.set('n', '<leader>tig', ':Tig<CR>')
+
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
@@ -492,7 +492,6 @@ local on_attach = function(_, bufnr)
     vim.lsp.buf.format()
   end, { desc = 'Format current buffer with LSP' })
 end
-
 
 vim.keymap.set('n', '<leader>ff', ':Format<CR>', { desc = '[F]ormat [F]ile' })
 
