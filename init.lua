@@ -99,6 +99,14 @@ require('lazy').setup({
     },
   },
 
+  -- tig support
+  {
+    'iberianpig/tig-explorer.vim',
+    dependencies = {
+      'rbgrouleff/bclose.vim',
+    },
+  },
+
   {
     -- Autocompletion
     'hrsh7th/nvim-cmp',
