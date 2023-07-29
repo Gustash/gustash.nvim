@@ -240,6 +240,7 @@ require('lazy').setup({
         null_ls.builtins.formatting.eslint_d,
         null_ls.builtins.completion.spell,
         null_ls.builtins.formatting.prettierd,
+        null_ls.builtins.formatting.rustfmt,
       }
     end,
   },
